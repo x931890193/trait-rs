@@ -1,5 +1,45 @@
 use std::ops::Add;
 
+// 一个简单的声明宏
+pub macro_rules! simple_macro {
+    () => {
+        println!("Hello, world!");
+    };
+}
+// 解释代码结构
+// pub: 修饰符
+// macro_rules!: 宏声明
+// simple_macro: 宏名称
+// {}: 宏体
+// (): 宏参数
+// =>: 宏体开始
+// println!("Hello, world!"): 宏体内容
+
+// 编译过程
+// 1. 预处理阶段，编译器会将宏展开
+// 2. 编译阶段，编译器会将宏展开后的代码编译成汇编代码
+// 3. 汇编阶段，汇编器会将汇编代码转换成机器码
+// 4. 链接阶段，链接器会将机器码转换成可执行文件
+
+
+
+// 一个带参数的声明宏
+pub macro_rules! simple_macro_with_param {
+    ($param:expr) => {
+        println!("Hello, {}!", $param);
+    };
+}
+// 解释代码结构
+// pub: 修饰符
+// macro_rules!: 宏声明
+// simple_macro_with_param: 宏名称
+// {}: 宏体
+// (): 宏参数
+// $param:expr: 宏参数表达式
+// =>: 宏体开始
+// println!("Hello, {}!", $param): 宏体内容
+
+
 #[derive(Debug)]
 enum MultipleTypes {
     Struct {
